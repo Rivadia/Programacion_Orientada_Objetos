@@ -2,19 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
 public class EnemigoB : MonoBehaviour
 {
-    public EnemigoC conejo = new EnemigoC(100, 50, "Conejo");
-    public List<EnemigoC> enemigoList;
+    public List<Enemigo> enemigo;
+
+
     // Start is called before the first frame update
     void Awake()
     {
-
-        enemigoList.Add(new EnemigoC(100, 50, "Conejo"));
-        enemigoList.Add(new EnemigoC(100, 30, "StoneFire"));
-        enemigoList.Add(new EnemigoC(500, 1, "Momia"));
-
+        enemigo.Add(new Enemigo(100, 50, "Hongito"));
+        enemigo.Add(new Enemigo(200, 500, "Momia"));
+        enemigo.Add(new Enemigo(50, 50, "Conejito"));
     }
 
     // Update is called once per frame

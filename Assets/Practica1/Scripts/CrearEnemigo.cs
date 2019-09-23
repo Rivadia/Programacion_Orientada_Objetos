@@ -2,36 +2,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CrearEnemigo : MonoBehaviour
+public class Crearenemigo : MonoBehaviour
 {
     public string Id;
     public string nombre;
     public int vida;
     public int magia;
-    EnemigoB enemigo;
-    EnemigoI enemigoI;
+    EnemigoB enemigoB;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        enemigo = FindObjectOfType<EnemigoB>();
-        enemigoI = GetComponentInChildren<EnemigoI>();
-        cEnemigo(Id);
-        enemigoI.enemigoI();
+        enemigoB = FindObjectOfType<EnemigoB>();
+
+        BusquedaEnemigo(Id);
+        
     }
 
-    void cEnemigo(string id)
+    private void BusquedaEnemigo(string id)
     {
-        for (int i = 0; i < enemigo.enemigoList.Count; i++)
+        for (int i = 0; i < enemigoB.enemigo.Count; i++)
         {
-            
-            if (id==enemigo.enemigoList[i].Nombre)
+            if (id== enemigoB.enemigo[i].nombre)
             {
-                nombre = enemigo.enemigoList[i].Nombre;
-                vida=enemigo.enemigoList[i].Vida;
-                magia = enemigo.enemigoList[i].Magia;
+                nombre = enemigoB.enemigo[i].nombre;
+                vida = enemigoB.enemigo[i].vida;
+                magia = enemigoB.enemigo[i].magia;
+
             }
         }
-
-
     }
+    
 }
